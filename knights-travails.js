@@ -24,7 +24,6 @@ class Knight {
 
         let queue = [new Node(from, "HEAD")]
 
-
         while( queue.length > 0) {
 
            let current = queue.shift()
@@ -37,11 +36,11 @@ class Knight {
 
                 while(currentLoop !== "HEAD") {
 
-                    path.unshift([...currentLoop.edge])
+                    path.unshift(currentLoop.edge)
                     currentLoop = currentLoop.prev
                 }
 
-               return [path, adjacencyList]
+               return path
             }
 
             Board.row = current.edge[0]
